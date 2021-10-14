@@ -28,7 +28,6 @@ public class LoginFormCucumberOpt1StepDefinition extends WebUI {
     private static final String USERNAME_CANNOT_BE_EMPTY_MESSAGE = "Username cannot be empty";
     private static final String PASSWORD_CANNOT_BE_EMPTY_MESSAGE = "Password cannot be empty";
 
-
     public LoginFormCucumberOpt1StepDefinition() {
     }
 
@@ -44,8 +43,6 @@ public class LoginFormCucumberOpt1StepDefinition extends WebUI {
             Assertions.fail(exception.getMessage());
         }
     }
-
-
 
 
     @When("Escribo usuario correcto y contrasena incorrecta y pulso el boton submit.")
