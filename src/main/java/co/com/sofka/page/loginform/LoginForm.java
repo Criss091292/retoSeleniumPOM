@@ -18,7 +18,7 @@ public class LoginForm extends CommonActionsOnPages {
     private static final String USERNAME = "txtUsername";
     private static final String PASSWORD = "txtPassword";
     private static final String SUBMIT = "btnLogin";
-    private static final String WELCOME_MESSAGE_ID = "welcome";
+
     private static final String CREDENTIALS_VALIDATION_MESSAGE_ID = "spanMessage";
     //For input test cases.
 
@@ -58,9 +58,7 @@ public class LoginForm extends CommonActionsOnPages {
     }
 
 
-    public String getWelcomeMessage(){
-        return getText(By.id(WELCOME_MESSAGE_ID));
-    }
+
 
     public String getValidationMessage(){
         return getText(By.id(CREDENTIALS_VALIDATION_MESSAGE_ID));

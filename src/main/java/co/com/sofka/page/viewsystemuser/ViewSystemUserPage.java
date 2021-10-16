@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class ViewSystemUserPage extends CommonActionsOnPages {
+    private static final String WELCOME_MESSAGE_ID = "welcome";
     public ViewSystemUserPage(WebDriver driver, ViewSystemUserModel landingPageModel) {
         super(driver);
         this.landingPageModel = landingPageModel;
@@ -97,7 +98,9 @@ public class ViewSystemUserPage extends CommonActionsOnPages {
         }
         return true;
     }
-
+    public String getWelcomeMessage(){
+        return getText(By.id(WELCOME_MESSAGE_ID));
+    }
 
 
 

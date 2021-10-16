@@ -1,7 +1,9 @@
 package co.com.sofka.stepdefinition.loginform.opt1;
 
 import co.com.sofka.model.loginform.LoginFormModel;
+import co.com.sofka.model.viewsystemuser.ViewSystemUserModel;
 import co.com.sofka.page.loginform.LoginForm;
+import co.com.sofka.page.viewsystemuser.ViewSystemUserPage;
 import co.com.sofka.stepdefinition.setup.WebUI;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -120,8 +122,11 @@ public class LoginFormCucumberOpt1StepDefinition extends WebUI {
     @Then("el sistema debera mostrar la pagina de usuarios.")
     public void el_sistema_debera_mostrar_la_pagina_de_usuarios() {
         try {
+            ViewSystemUserModel viewSystemUserModel = new ViewSystemUserModel();
+            ViewSystemUserPage viewSystemUserPage = new ViewSystemUserPage(driver, viewSystemUserModel);
+
             Assertions.assertTrue(
-                    loginForm.getWelcomeMessage().contains(WELCOME_MESSAGE),
+                    viewSystemUserPage.getWelcomeMessage().contains(WELCOME_MESSAGE),
                     ASSERTION_EXCEPTION_MESSAGE
             );
             quitDriver();
